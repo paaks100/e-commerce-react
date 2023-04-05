@@ -23,13 +23,14 @@ export const Cart = () => {
                 })}
             </div>
 
-            {getTotalCartAmount() > 0 ? (
-            <div className='checkout'>
-                <p> Subtotal: ${getTotalCartAmount().toFixed(2)} </p>
-                <button onClick={() => navigate("/")}> Continue Shopping </button>
-                <button> Checkout </button>
-            </div>
-            ) : (<h1> Your Cart Is Empty </h1>)}
+            {getTotalCartAmount() > 0
+                ? (<div className='checkout'>
+                    <p> Subtotal: ${getTotalCartAmount().toFixed(2)} </p>
+                    <button onClick={() => navigate("/")}> Continue Shopping </button>
+                    <button> Checkout </button>
+                    </div>)
+                : (<h1> Your Cart Is Empty </h1>)
+            }
         </div>
     )
 }
